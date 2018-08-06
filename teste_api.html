@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<title>Teste de acordeon</title>
+</head>
+<style type="text/css">
+.accordeon-row {
+    font-family: roboto;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ccc;
+    padding: 0vw 2vw;
+}
+.accordeon-plus {
+    margin-bottom: auto;
+    margin-top: auto;
+}
+.accordeon-plus a {
+    font-size: 2.5rem;
+    text-decoration: none;
+    color: black;
+}
+.accordeon-content {
+    width: 60vw;
+    display: flex;
+    overflow: hidden;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+}
+
+</style>
+<body>
+	<div class="accordeon-container">
+		<div class="accordeon-row">
+			<div class="accordeon-title">
+				<h2>TABELA DETALHADA</h2>
+			</div>
+			<div class="accordeon-plus">
+				<a href="#"><span class="dashicons dashicons-plus"> + </span></a>
+			</div>
+		</div>
+		<div class="accordeon-content">
+			<table style="border-collapse: collapse; width: 384pt;" border="0" width="384" cellspacing="0" cellpadding="0"><colgroup> <col style="width: 48pt;" span="6" width="64" /> </colgroup><tbody><tr style="height: 15.0pt;"><td style="height: 15.0pt; width: 48pt;" width="64" height="20"><strong>Info 1</strong></td><td style="width: 48pt;" width="64"><strong>Info 2</strong></td><td style="width: 48pt;" width="64"><strong>Info 3</strong></td><td style="width: 48pt;" width="64"><strong>Info 4</strong></td><td style="width: 48pt;" width="64"><strong>Info 5</strong></td><td style="width: 48pt;" width="64"><strong>Info 6</strong></td></tr><tr style="height: 15.0pt;"><td style="height: 15.0pt;" align="right" height="20">1</td><td>seg</td><td>a</td><td>jan</td><td align="right">1</td><td>seg</td></tr><tr style="height: 15.0pt;"><td style="height: 15.0pt;" align="right" height="20">2</td><td>ter</td><td>b</td><td>fev</td><td align="right">2</td><td>ter</td></tr><tr style="height: 15.0pt;"><td style="height: 15.0pt;" align="right" height="20">3</td><td>qua</td><td>c</td><td>mar</td><td align="right">3</td><td>qua</td></tr><tr style="height: 15.0pt;"><td style="height: 15.0pt;" align="right" height="20">4</td><td>qui</td><td>a</td><td>abr</td><td align="right">4</td><td>qui</td></tr><tr style="height: 15.0pt;"><td style="height: 15.0pt;" align="right" height="20">5</td><td>sex</td><td>b</td><td>mai</td><td align="right">5</td><td>sex</td></tr><tr style="height: 15.0pt;"><td style="height: 15.0pt;" align="right" height="20">6</td><td>sáb</td><td>c</td><td>jun</td><td align="right">6</td><td>sáb</td></tr><tr style="height: 15.0pt;"><td style="height: 15.0pt;" align="right" height="20">7</td><td>dom</td><td>a</td><td>jul</td><td align="right">7</td><td>dom</td></tr><tr style="height: 15.0pt;"><td style="height: 15.0pt;" align="right" height="20">8</td><td>seg</td><td>b</td><td>ago</td><td align="right">8</td><td>seg</td></tr><tr style="height: 15.0pt;"><td style="height: 15.0pt;" align="right" height="20">9</td><td>ter</td><td>c</td><td>set</td><td align="right">9</td><td>ter</td></tr><tr style="height: 15.0pt;"><td style="height: 15.0pt;" align="right" height="20">10</td><td>qua</td><td>a</td><td>out</td><td align="right">10</td><td>qua</td></tr><tr style="height: 15.0pt;"><td style="height: 15.0pt;" align="right" height="20">11</td><td>qui</td><td>b</td><td>nov</td><td align="right">11</td><td>qui</td></tr><tr style="height: 15.0pt;"><td style="height: 15.0pt;" align="right" height="20">12</td><td>sex</td><td>c</td><td>dez</td><td align="right">12</td><td>sex</td></tr></tbody></table>
+		</div>
+	</div>
+	<script type="text/javascript">
+		jQuery('.accordeon-plus').on('click', function (e) {
+			e.preventDefault();
+			jQuery('.accordeon-content').toggle();
+		});
+		/*		
+		function loadJSON(response) {
+			resp = JSON.parse(response);
+			console.log(resp);
+		}
+		*/		
+		$(document).ready(function(){
+   			$.get( "https://api.etherscan.io/api?module=transaction&action=getstatus&txhash=0x15f8e5ea1079d9a0bb04a4c58ae5fe7654b5b2b4463375ff7ffb490aa0032f3a&apikey=YourApiKeyToken", function(data) {
+				// busque as variaveis a pastir dai
+        		console.log(data);
+    		});
+		});
+	</script>
+</body>
+</html>
